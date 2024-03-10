@@ -319,7 +319,7 @@ class MySQLApp:
                                 DATE_FORMAT(DonationTS, '%Y-%m') AS YearMonth, 
                                 COUNT(DonationEntryID) AS NumberOfDonations, 
                                 SUM(Quantity) AS TotalQuantityDonated
-                                FROM mm_team02_02.DonationEntry
+                                FROM DonationEntry
                                 WhERE  DATE_FORMAT(DonationTS, '%Y-%m') = \'{}-{}\'
                                 GROUP BY DATE_FORMAT(DonationTS, '%Y-%m')
                                 ORDER BY YearMonth desc;'''.format(year_selected,month_selected)
@@ -329,7 +329,7 @@ class MySQLApp:
                         DATE_FORMAT(DonationTS, '%Y-%m-%d') AS Date, 
                         COUNT(DonationEntryID) AS NumberOfDonations, 
                         SUM(Quantity) AS TotalQuantityDonated
-                        FROM mm_team02_02.DonationEntry
+                        FROM DonationEntry
                         WhERE  DATE_FORMAT(DonationTS, '%Y-%m-%d') = \'{}-{}-{}\'
                         GROUP BY DATE_FORMAT(DonationTS, '%Y-%m-%d');'''.format(date_year, date_month, date_day)
 
