@@ -139,7 +139,6 @@ class MySQLApp:
                 try:
                     cursor = self.connection.cursor()
                     query = "SELECT BloodGroup, COUNT(*) AS NumberOfDonors FROM Donor WHERE BloodGroup = %s GROUP BY BloodGroup;"
-                    print(query)
                     cursor.execute(query, (blood_group,))
                     records = cursor.fetchall()
                     self.result_title_label.configure(text = "Number of Donor by Blood Group")
@@ -661,7 +660,7 @@ if __name__ == '__main__':
     root.withdraw()  # Hide the main root window
 
     # Show the splash screen
-    splash = SplashScreen(root, 'splash_image.jpg', 2000)
+    splash = SplashScreen(root, 'splash_image', 2000)
 
     def on_splash_screen_destroy():
             root.deiconify()  # Re-display the root window
