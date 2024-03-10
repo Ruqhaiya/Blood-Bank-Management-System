@@ -660,7 +660,7 @@ if __name__ == '__main__':
     root.withdraw()  # Hide the main root window
 
     # Show the splash screen
-    splash = SplashScreen(root, 'splash_image', 2000)
+    splash = SplashScreen(root, 'Blood-Bank-Management-System\splash_image.jpg', 2000)
 
     def on_splash_screen_destroy():
             root.deiconify()  # Re-display the root window
