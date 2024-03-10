@@ -625,7 +625,7 @@ class MySQLApp:
                 self.connection_status.configure(text="Connected", fg="green")
                 self.cred_window.destroy()
         except Error as e:
-            messagebox.showerror("Connection Failed", "Failed to connect to the database: {e}")
+            messagebox.showerror("Connection Failed", "Failed to connect to the database: {}".format(e))
             self.connection_status.configure(text="Not Connected", fg="red")
 
 class SplashScreen(Toplevel):
